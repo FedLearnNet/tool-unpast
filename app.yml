@@ -1,0 +1,123 @@
+config:
+  hyperparams:
+  - default: kmeans
+    description: The method used for binarization.
+    maxValue: null
+    minValue: null
+    name: binarization_method
+    options:
+    - kmeans
+    - Ward
+    - GMM
+    pattern: null
+    type: CATEGORICAL
+  - default: '2'
+    description: The depth of splitting in the clustering process (used for 'WGCNA').
+    maxValue: 4.0
+    minValue: 0.0
+    name: deep_split
+    options: []
+    pattern: null
+    type: INTEGER
+  - default: '0.5'
+    description: Threshold value for dynamic tree cut (used for 'WGCNA'). Must be
+      in [0, 1].
+    maxValue: 1.0
+    minValue: 0.0
+    name: dynamic_tree_cut
+    options: []
+    pattern: null
+    type: FLOAT
+  - default: '3'
+    description: Ceiling for z-scores to reduce outliers. Must be 0 or a positive
+      integer.
+    maxValue: null
+    minValue: 0.0
+    name: ceiling
+    options: []
+    pattern: null
+    type: INTEGER
+  - default: 'true'
+    description: Whether to find biclusters that are both up- and down-regulated.
+    maxValue: null
+    minValue: null
+    name: bidirectional
+    options: []
+    pattern: null
+    type: BOOLEAN
+  - default: '42'
+    description: Random seed for reproducibility.
+    maxValue: null
+    minValue: null
+    name: seed
+    options: []
+    pattern: null
+    type: INTEGER
+  - default: automatic
+    description: Mode for similarity cutoff in 'Louvain' clustering.
+    maxValue: null
+    minValue: null
+    name: similarity_cutoff_mode
+    options:
+    - automatic
+    - manual
+    pattern: null
+    type: CATEGORICAL
+  - default: '0.5'
+    description: Similarity cutoff value (used only if similarity_cutoff_mode is 'manual').
+    maxValue: 1.0
+    minValue: 0.0
+    name: similarity_cutoff_value
+    options: []
+    pattern: null
+    type: FLOAT
+  - default: '0.05'
+    description: The p-value threshold for binarization. Must be in (0, 1].
+    maxValue: 1.0
+    minValue: 0.0
+    name: p_value
+    options: []
+    pattern: null
+    type: FLOAT
+  - default: WGCNA
+    description: The clustering method to use.
+    maxValue: null
+    minValue: null
+    name: clustering_method
+    options:
+    - WGCNA
+    - Louvain
+    pattern: null
+    type: CATEGORICAL
+  input:
+  - delimiter: null
+    description: 'Expression matrix by tsv file.   Rows = Features (e.g. genes) Columns
+      = Samples '
+    hasHeader: true
+    indexCol: 0
+    maxValue: null
+    minValue: null
+    name: data
+    required: true
+    shape: null
+    tabularSchema: null
+    type: TSV
+  output:
+  - delimiter: null
+    description: A .tsv file containing the identified biclusters.
+    hasHeader: null
+    maxValue: null
+    minValue: null
+    name: outputFile
+    required: false
+    shape: null
+    tabularSchema: null
+    type: CSV
+info:
+  name: tool-unpast
+  slug: tool-unpast
+  type: SELF_LEARNED
+  sourceUrl: https://github.com/FedLearnNet/tool-unpast
+  shortDescription: Discovers expression biclusters with UnPaSt and exports sample
+    groups, feature sets, and visualizations.
+  longDescription: null
