@@ -114,8 +114,8 @@ config:
     tabularSchema: null
     type: CSV
 info:
-  name: tool-unpast
-  slug: tool-unpast
+  name: unpast
+  slug: unpast
   type: SELF_LEARNED
   sourceUrl: https://github.com/FedLearnNet/tool-unpast
   shortDescription: Discovers expression biclusters with UnPaSt and exports sample

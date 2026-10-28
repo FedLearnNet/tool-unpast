@@ -1,4 +1,4 @@
-# tool-unpast
+# unpast
 
 Discovers expression biclusters with UnPaSt and exports sample groups, feature sets, and visualizations.
 
