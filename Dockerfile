@@ -1,4 +1,4 @@
-FROM ghcr.io/fedlearnnet/python-tool-api/base-r-dep-biocmanager:0.7.15.dev
+FROM ghcr.io/fedlearnnet/python-tool-api/base-r-dep-biocmanager:0.7.16.dev
 
 USER root
 ENV MAKEFLAGS=-j2
